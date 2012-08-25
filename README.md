@@ -19,6 +19,8 @@ Installation
 
 * Enable Profile Url
 
+* Replace Profile plugin with mod/profile
+
 * Run Upgrade.php
 
 
