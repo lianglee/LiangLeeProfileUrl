@@ -5,7 +5,7 @@ Make Profile Url Like facebook example http:// or https://website.com/username
 
 Installation
 
-* Download LiangLeeFramework 1.1.2
+* Download LiangLeeFramework 1.1.3
 
 * Extract to mod dir
 
@@ -31,6 +31,6 @@ before you disable the index from settings you must enable your own index plugin
 To replace default profile url to faebook like url you need to replace start.php of profile plugin
 with mod/LiangLeeProfileUrl/configure/profile/start.php
 
-More Plugin found herehttp://community.elgg.org/plugins/developer/arsalanlee
+More Plugin found here http://community.elgg.org/plugins/developer/arsalanlee
 
 Any problem in installing or any Bug Please Report it on https://github.com/lianglee/LiangLeeProfileUrl/issues
