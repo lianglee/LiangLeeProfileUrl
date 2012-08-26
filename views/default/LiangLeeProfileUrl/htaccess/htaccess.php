@@ -105,6 +105,7 @@ RewriteRule ^pg\/([A-Za-z0-9\_\-]+)$ engine/handlers/page_handler.php?handler=$1
 RewriteRule ^pg\/([A-Za-z0-9\_\-]+)\/(.*)$ engine/handlers/page_handler.php?handler=$1&page=$2&%{QUERY_STRING}
 RewriteRule ^tag\/(.+)\/?$ engine/handlers/page_handler.php?handler=search&page=$1
 
+#Support profile url like facebook
 
 RewriteRule ^([a-zA-Z0-9_-]+)$ profile/$1
 

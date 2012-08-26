@@ -5,3 +5,4 @@ LiangLeeProfileUrl 1.0.1
 * Added Readme.md
 * Fix Redirected Loop error when browse website.com/admin fixed by adding website.com/admin/
 
+LiangLee ProfileUrl 1.0.0 -> initial release

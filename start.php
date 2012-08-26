@@ -73,9 +73,7 @@ elgg_register_menu_item('site', $item);
  * Unregister dashboard from topbar
  *
  * @access public
- */
-if (elgg_is_active_plugin('dashboard')) {
-  
+ */ 
 elgg_unregister_menu_item('topbar', 'dashboard');
 /*
  * Register dashboard to topbar with herf include backslah ( / )
@@ -90,7 +88,6 @@ elgg_register_menu_item('topbar', array(
 		'section' => 'alt',
 	));
 	
-}	
 if (!elgg_get_plugin_setting('liang_lee_purl', 'LiangLeeProfileUrl')) {
 
 elgg_register_plugin_hook_handler('index', 'system', 'LiangLeeProfileUrl_rid_error');

@@ -11,22 +11,25 @@ Installation
 
 * Enable Framework
 
-* Replace the contents of .htaccess file with htaccess/htaccess.txt
-
 * Download LiangLee ProfileUrl
 
 * Extract to mod dir
 
-* Enable Profile Url
+* Enable LiangLee ProfileUrl
+
+* Go to http://yourwebsite.com/admin/plugin_settings/LiangLeeProfileUrl
+
+* Save Settings According to your need
 
 * Run Upgrade.php
 
 
 There is built in Index plugin if you have own custom index plugin you can disable it using LiangLeeProfileUrl Settings Panel
 
-before you deisable the index from settings you must enable your own index plugin other wise you got errors beucase you 
+before you disable the index from settings you must enable your own index plugin other wise you got errors beucase you disable the rid_error hook.
 
-disable the rid_error hook.
+To replace default profile url to faebook like url you need to replace start.php of profile plugin
+with mod/LiangLeeProfileUrl/configure/profile/start.php
 
 More Plugin found herehttp://community.elgg.org/plugins/developer/arsalanlee
 
