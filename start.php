@@ -74,6 +74,8 @@ elgg_register_menu_item('site', $item);
  *
  * @access public
  */ 
+if (elgg_is_active_plugin('dashboard')) {
+ 
 elgg_unregister_menu_item('topbar', 'dashboard');
 /*
  * Register dashboard to topbar with herf include backslah ( / )
@@ -87,13 +89,7 @@ elgg_register_menu_item('topbar', array(
 		'priority' => 450,
 		'section' => 'alt',
 	));
-	
-if (!elgg_get_plugin_setting('liang_lee_purl', 'LiangLeeProfileUrl')) {
-
-elgg_register_plugin_hook_handler('index', 'system', 'LiangLeeProfileUrl_rid_error');
-
-} 
-
+}
 if (elgg_get_plugin_setting('liang_lee_purl', 'LiangLeeProfileUrl') == 1) {
 
 elgg_register_plugin_hook_handler('index', 'system', 'LiangLeeProfileUrl_rid_error');
@@ -103,8 +99,38 @@ elgg_register_plugin_hook_handler('index', 'system', 'LiangLeeProfileUrl_rid_err
 elgg_unregister_plugin_hook_handler('index', 'system', 'LiangLeeProfileUrl_rid_error');
 
    }
-}
+if (!elgg_get_plugin_setting('liang_lee_purl', 'LiangLeeProfileUrl')) {
 
+elgg_register_plugin_hook_handler('index', 'system', 'LiangLeeProfileUrl_rid_error');
+
+}
+if (elgg_is_active_plugin('search')) {
+
+elgg_unregister_page_handler('search', 'search_page_handler');
+
+elgg_register_page_handler('search', 'lianglee_search_page_handler');
+
+}
+if (elgg_is_active_plugin('externalpages')) {
+$items = array(
+'about',
+'terms',
+'privacy');
+foreach($items as $unreg){
+elgg_unregister_menu_item('footer',$unreg);
+$url = "$unreg/";
+$items = new ElggMenuItem($unreg, elgg_echo("expages:$unreg"), $url);
+elgg_register_menu_item('footer', $items);
+    }
+} 
+if (elgg_is_active_plugin('members')) {
+	$item = new ElggMenuItem('members', elgg_echo('members'), 'members');
+	elgg_unregister_menu_item('site', $item);
+	
+	$reitem = new ElggMenuItem('members', elgg_echo('members'), 'members/');
+	elgg_register_menu_item('site', $reitem);
+}
+}
 /*
  * Activate index to get rid of Redirected loop errors
  *
@@ -119,5 +145,27 @@ function LiangLeeProfileUrl_rid_error($hook, $type, $return, $params) {
 	if (!include_once(dirname(__FILE__) . "/index.php")) {
 		return false;
 	}
+	return true;
+}
+/**
+ * Page handler for search
+ *
+ * @param array $page Page elements from core page handler
+ * @return bool
+ */
+function lianglee_search_page_handler($page) {
+
+	// if there is no q set, we're being called from a legacy installation
+	// it expects a search by tags.
+	// actually it doesn't, but maybe it should.
+	// maintain backward compatibility
+	if(!get_input('q', get_input('tag', NULL))) {
+		set_input('q', $page[0]);
+		//set_input('search_type', 'tags');
+	}
+
+	$base_dir = elgg_get_plugins_path() . 'LiangLeeProfileUrl/pages/search';
+
+	include_once("$base_dir/index.php");
 	return true;
 }

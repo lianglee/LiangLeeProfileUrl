@@ -1,10 +1,18 @@
-LiangLeeProfileUrl 1.0.2
-(August 26, 2012 from https://github.com/lianglee/LiangLeeProfileUrl)
+LiangLeeProfileUrl 1.0.4
+(August 26, 2012 from https://github.com/lianglee/LiangLeeProfileUrl/1.0.4)
 
-* Updated Readme.md
-* Added Better Support for configuring profile url.
-* Fix Error in Settings
-* Updateed ChangeLog.md
-* Removed htaccess.txt
-* Added Missing Languages
-* Backup Support
+* Fix Forgot password link in forms
+
+* Fix Register link in forms
+
+* Fix Search Module
+
+* Fix Common Bugs that cause automatic register menu item if plugin is disable
+
+* Fix a links of expages to avoid errors
+
+* Fix members link to avoid errors
+
+ Enhancements:
+
+Added kisssssss4ever as a contributors for helping us to find errors
