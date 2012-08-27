@@ -30,14 +30,14 @@ before you disable the index from settings you must enable your own index plugin
 
 **To replace default profile url links to faebook like url you need follow steps**
 
-** Go start.php of profile plugin**
-** Find**
+* Go start.php of profile plugin
+* Find
 
 function profile_url1($user) {
 return elgg_get_site_url() . "profile/" . $user->username;
 }
 
-** Replace With**
+* Replace With
 
 function profile_url1($user) {
 return elgg_get_site_url() . $user->username;
