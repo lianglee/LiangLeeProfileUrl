@@ -11,6 +11,9 @@
 elgg_register_event_handler('init', 'system', 'LiangLeeProfileUrl_init');
 
 function LiangLeeProfileUrl_init() {
+
+elgg_register_entity_url_handler('user', 'all', 'lianglee_purl_handler',1);
+
 /*
  * Register Error if Framework is missing and Pluing is Enabled
  *
@@ -169,4 +172,13 @@ function lianglee_search_page_handler($page) {
 
 	include_once("$base_dir/index.php");
 	return true;
+}
+/**
+ * Profile URL generator for $user->getUrl();
+ *
+ * @param ElggUser $user
+ * @return string User URL
+ */
+function lianglee_purl_handler($user) {
+return elgg_get_site_url() . $user->username;
 }

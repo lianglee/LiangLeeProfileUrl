@@ -1,20 +1,16 @@
-LiangLeeProfileUrl 1.0.4
-(August 26, 2012 from https://github.com/lianglee/LiangLeeProfileUrl/1.0.4)
+LiangLeeProfileUrl 1.0.5
+(August 26, 2012 from https://github.com/lianglee/LiangLeeProfileUrl/1.0.5)
 
-* Fix Forgot password link in forms.
+BugFixs:
 
-* Fix Register link in forms.
+* Added elgg_register_entity_url_handler() to avoid core editing ( Thanks to Matt Beckett )
 
-* Fix Search Module.
+* Updated Readme.md
 
-* Fix Common Bugs that cause automatic register menu item if plugin is disable.
-
-* Fix a links of expages to avoid errors.
-
-* Fix members link to avoid errors.
+* Deleted configure folder 
 
  Enhancements:
 
-* Added kisssssss4ever as a contributors for helping us to find errors.
+* Added Matt Beckett as a contributors for helping us to find errors.
 
 * Added settings page Preview.
