@@ -130,6 +130,7 @@ if (elgg_is_active_plugin('members')) {
 	$reitem = new ElggMenuItem('members', elgg_echo('members'), 'members/');
 	elgg_register_menu_item('site', $reitem);
 }
+
 }
 /*
  * Activate index to get rid of Redirected loop errors

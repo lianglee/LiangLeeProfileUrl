@@ -13,6 +13,11 @@
         <name>LiangleeFramework</name>
         <version>1.1.3</version>
        </requires>
+      <screenshot>
+		<description>Settings Page</description>
+		<path>preview/liangleepurl.jpg</path>
+	</screenshot>
+
 	<requires>
 		<type>elgg_version</type>
 		<version>2012071100</version>
