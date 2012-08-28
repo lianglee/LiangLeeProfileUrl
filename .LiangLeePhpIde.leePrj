@@ -10,5 +10,5 @@
     <PRJ Property="ProductCode" Value="9872:{A8583590-LEE-4BF2-53BD-LEPUR101}" Type="5"/>
     <PRJ Property="ProductLanguage" Value="2057"/>
     <PRJ Property="ProductName" Value="LiangLeeProfileUrl" ValueLocId="*"/>
-    <PRJ Property="ProductVersion" Value="1.0.5"/>
+    <PRJ Property="ProductVersion" Value="1.0.6"/>
   </COMPONENT>
