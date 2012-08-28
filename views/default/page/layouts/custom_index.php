@@ -1,5 +1,29 @@
 <?php
+/* LiangLee Profile Url
+ * FrameWork for Liang Lee Plugins
+ * @website Link: http://community.elgg.org/pg/profile/arsalanlee/
+ * @package LiangLeeFramework
+ * @subpackage LiangLee Profile Url
+ * @author Liang Lee
+ * @copyright All right reserved Liang Lee 2012.
+ * @File settings.php
+ */
+LiangLee_include('LiangLeeProfileUrl','lib/LiangLeeProfileUrl');
+
+LiangLeeProfileurl_lib();
+
+global $redirect;
+
+if(elgg_is_logged_in()){
+forward($redirect);
+}
+
+/* 
+ * Elgg Custom Index page
+ * @copyright Elgg
+ */
 $mod_params = array('class' => 'elgg-module-highlight');
+
 ?>
 
 <div class="custom-index elgg-main elgg-grid clearfix">

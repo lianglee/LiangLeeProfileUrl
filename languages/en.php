@@ -24,6 +24,7 @@ $english = array(
 	'lee:purl:info:2' => "After you backup is completed please Configure Lee's Profile Url",
 	'lianglee:framewrok:miss' => "LiangLeeFramewrok is Missing",
 	'lianglee:framewrok:miss:code' => "Error: #LF52 , Please inform site Administrator. ",
+	'lee:purl:startphp' => "Enter url of that page if you wan't to redirect user to specific page, Leave blank if you don't wan't redirect.",
 	
  );
 					

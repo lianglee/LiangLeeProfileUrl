@@ -133,7 +133,19 @@ if (elgg_is_active_plugin('members')) {
 	$reitem = new ElggMenuItem('members', elgg_echo('members'), 'members/');
 	elgg_register_menu_item('site', $reitem);
 }
+if (elgg_is_active_plugin('invitefriends')) {
+	if (elgg_is_logged_in()) {
+		$params = array(
+			'name' => 'invite',
+			'text' => elgg_echo('friends:invite'),
+			'href' => "invite/",
+			'contexts' => array('friends'),
+		);
+		elgg_unregister_menu_item('page', $params);
+		elgg_register_menu_item('page', $params);
 
+}
+}
 }
 /*
  * Activate index to get rid of Redirected loop errors

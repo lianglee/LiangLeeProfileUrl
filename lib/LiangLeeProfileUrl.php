@@ -29,3 +29,15 @@ LiangLee_putconents($CONFIG->path.'.htaccess',$data);
 system_message(elgg_echo('lee:purl:ok'));
 forward('admin/plugin_settings/LiangLeeProfileUrl');
 }	
+function LiangLeeProfileurl_lib(){
+
+global $redirect;
+
+$page = elgg_get_plugin_setting("lee_purl_redir", "LiangLeeProfileUrl");
+
+if(!elgg_get_plugin_setting("lee_purl_redir", "LiangLeeProfileUrl")){
+	$redirect = "activity/";
+	} else {
+	$redirect = $page;
+	}
+}

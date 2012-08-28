@@ -34,11 +34,17 @@ $liang_lee_purl = elgg_view('input/dropdown', array(
     'value' => $vars['entity']->liang_lee_purl,
     'options_values' => array(1 => 'Enable', 2 => 'Disable')));	
 
+
+$liang_lee_redir = elgg_view("input/text", array(
+"name" => "params[lee_purl_redir]", 
+"value" => $vars['entity']->lee_purl_redir));	
+
+
 $lee_purl_entry = elgg_echo('lee:purl:config');
 $lee_purl_backup = elgg_echo('lee:purl:backup');
 $lee_purl_info = elgg_echo('lee:purl:info:1');
 $lee_purl_info2 = elgg_echo('lee:purl:info:2');
-$profile_start_php = elgg_echo('lee:purl:startphp');
+$profile_redir_php = elgg_echo('lee:purl:startphp');
 
 $url = "".elgg_get_site_url()."admin/plugin_settings/LiangLeeProfileUrl?backup";
 $url2 = "".elgg_get_site_url()."admin/plugin_settings/LiangLeeProfileUrl?configure";
@@ -51,12 +57,13 @@ $settings = <<<__HTML
 .style1 {color: #FF0000;font-weight: bold;}
 </style>
     <div>
-	  <p><strong>$lee_purl_info</strong><a href= $url class="style1"><i></i><br />
+	  <p><strong>$lee_purl_info</strong><a href= $url class="style1"><br />
       $lee_purl_backup</a><br />
 	    <strong>$lee_purl_info2</strong><br>
-	    <a href=$url2 class="style1">$lee_purl_entry</a>      </p>
+      <a href=$url2 class="style1">$lee_purl_entry</a> </p>
 	  <p><i>$lleesettings</i><br>$liang_lee_purl</p><br />
-      $profile_start_php
+      $profile_redir_php<br/>
+	  $liang_lee_redir
 		<hr>
 		<p><i>$liang_lee_copytights</i>
 		<p>Release: $plug_rel</p>

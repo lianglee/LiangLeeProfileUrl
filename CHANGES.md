@@ -1,16 +1,18 @@
-LiangLeeProfileUrl 1.0.5
-(August 26, 2012 from https://github.com/lianglee/LiangLeeProfileUrl/1.0.5)
+LiangLeeProfileUrl 1.0.6
+(August 26, 2012 from https://github.com/lianglee/LiangLeeProfileUrl/1.0.6)
 
 BugFixs:
 
-* Added elgg_register_entity_url_handler() to avoid core editing ( Thanks to Matt Beckett )
+* Fixed invite url link.
 
-* Updated Readme.md
-
-* Deleted configure folder 
+* Minor bugs fixes.
 
  Enhancements:
 
-* Added Matt Beckett as a contributors for helping us to find errors.
+* Redirect User to Specific Page after Login.
 
-* Added settings page Preview.
+* Updated ChangeLog.md
+
+* Updated Version.php
+
+* Updated Manifest.xml
