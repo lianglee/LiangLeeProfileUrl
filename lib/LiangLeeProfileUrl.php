@@ -8,6 +8,21 @@
  * @copyright All right reserved Liang Lee 2012.
  * @File settings.php
  */
+function LiangLeeProfileurl_lib(){
+
+global $redirect;
+
+$page = elgg_get_plugin_setting("lee_purl_redir", "LiangLeeProfileUrl");
+
+if(!elgg_get_plugin_setting("lee_purl_redir", "LiangLeeProfileUrl")){
+	$redirect = "activity/";
+	} else {
+	$redirect = $page;
+	}
+} 
+
+$check = is_file($CONFIG->path.'.htaccess.lianglee~backup');
+ 
 $backup = LiangLee_url(array('connection' => "http",'url' => "admin/plugin_settings/LiangLeeProfileUrl?backup"));
 
 if($backup){		
@@ -29,15 +44,18 @@ LiangLee_putconents($CONFIG->path.'.htaccess',$data);
 system_message(elgg_echo('lee:purl:ok'));
 forward('admin/plugin_settings/LiangLeeProfileUrl');
 }	
-function LiangLeeProfileurl_lib(){
 
-global $redirect;
+$undo = LiangLee_url(array('connection' => "http",'url' => "admin/plugin_settings/LiangLeeProfileUrl?revert"));
 
-$page = elgg_get_plugin_setting("lee_purl_redir", "LiangLeeProfileUrl");
 
-if(!elgg_get_plugin_setting("lee_purl_redir", "LiangLeeProfileUrl")){
-	$redirect = "activity/";
-	} else {
-	$redirect = $page;
-	}
+if($undo){
+$data = file_get_contents($CONFIG->path.'.htaccess.lianglee~backup');
+if(!$data){
+register_error(elgg_echo('lee:purl:undo:fail'));
+forward('admin/plugin_settings/LiangLeeProfileUrl');
+} else {
+LiangLee_putconents($CONFIG->path.'.htaccess',$data);
+system_message(elgg_echo('lee:purl:undo:ok'));
+forward('admin/plugin_settings/LiangLeeProfileUrl');
+     } 
 }

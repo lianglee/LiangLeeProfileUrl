@@ -45,25 +45,61 @@ $lee_purl_backup = elgg_echo('lee:purl:backup');
 $lee_purl_info = elgg_echo('lee:purl:info:1');
 $lee_purl_info2 = elgg_echo('lee:purl:info:2');
 $profile_redir_php = elgg_echo('lee:purl:startphp');
-
+$lee_purl_info9 = elgg_echo('lee:purl:undo:notes');
+$lee_purl_info4 = elgg_echo('lee:purl:undo');
 $url = "".elgg_get_site_url()."admin/plugin_settings/LiangLeeProfileUrl?backup";
 $url2 = "".elgg_get_site_url()."admin/plugin_settings/LiangLeeProfileUrl?configure";
+$url3 = "".elgg_get_site_url()."admin/plugin_settings/LiangLeeProfileUrl?revert";
 
 /**
 * Setting Page
 **/
-$settings = <<<__HTML
-<style type="text/css">
-.style1 {color: #FF0000;font-weight: bold;}
-</style>
-    <div>
-	  <p><strong>$lee_purl_info</strong><a href= $url class="style1"><br />
-      $lee_purl_backup</a><br />
-	    <strong>$lee_purl_info2</strong><br>
+?>
+<?php
+echo "<style type=\"text/css\">\n"; 
+echo ".style1 {color: #FF0000;font-weight: bold;}\n"; 
+echo "</style>\n"; 
+echo "\n"; 
+echo "<div class='elgg-module-inline'>\n"; 
+echo "<div class='elgg-head'>\n"; 
+echo "<h3>Backup</h3>\n"; 
+echo "</div>		\n"; 
+echo "    <div>\n"; 
+echo "	  <p>\n";
+echo $lee_purl_info;
+echo "<a href=\"\n";
+echo $url.'"';
+echo "class=\"style1\">\n"; 
+echo "<br />\n";
+if(!$check){ echo $lee_purl_backup;}
+echo "</a><br />\n";
+$settings .= <<<__HTML
+<div class='elgg-module-inline'>
+<div class='elgg-head'>
+<h3>Configure</h3>
+</div>		
+	  $lee_purl_info2<br>
       <a href=$url2 class="style1">$lee_purl_entry</a> </p>
+	  
+			<div class='elgg-module-inline'>
+				<div class='elgg-head'>
+				<h3>Custom Index</h3>
+				</div>		
 	  <p><i>$lleesettings</i><br>$liang_lee_purl</p><br />
+
+			<div class='elgg-module-inline'>
+				<div class='elgg-head'>
+				<h3>Redirect after login</h3>
+				</div>			  
       $profile_redir_php<br/>
 	  $liang_lee_redir
+		<hr>
+		<div class='elgg-module-inline'>
+		<div class='elgg-head'>
+		<h3>$lee_purl_info4</h3>
+		</div></div>			  
+	    $lee_purl_info9<br>
+      <a href=$url3 class="style1">$lee_purl_info4</a> </p>
 		<hr>
 		<p><i>$liang_lee_copytights</i>
 		<p>Release: $plug_rel</p>
@@ -72,5 +108,5 @@ $settings = <<<__HTML
     
 </div>
 __HTML;
-echo $settings;
-
+echo $settings1,$settings;
+?>

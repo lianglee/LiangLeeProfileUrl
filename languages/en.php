@@ -20,11 +20,16 @@ $english = array(
 	'lee:purl:ok' => "You have successfully configured LiangLeeProfile Url.",
 	'lee:purl:backup:ok' => "You have successfully backup.",
 	'lee:purl:backup' => "Backup Now",
-	'lee:purl:info:1' => "Before you configure Lee's ProfileUrl it is recommend that you should backup some files:",
+	'lee:purl:info:1' => "Before you configure Lee's ProfileUrl it is recommend that you should backup some files:( if backup already configured you can't backup or backup button get invisible ",
 	'lee:purl:info:2' => "After you backup is completed please Configure Lee's Profile Url",
 	'lianglee:framewrok:miss' => "LiangLeeFramewrok is Missing",
 	'lianglee:framewrok:miss:code' => "Error: #LF52 , Please inform site Administrator. ",
 	'lee:purl:startphp' => "Redirect User to page after login? Enter Url here like  ( http://website.com/blogs/all ), leave Blank if you don't wan't to redirect.",
+	'lee:purl:undo:notes' => "If you are having problem you can undo changes any time.",
+	'lee:purl:undo' => "Undo Changes",
+	'lee:purl:undo:fail' => "Failed to undo changes contact developer",
+	'lee:purl:undo:ok' => "Undo changes sucessfull!",
+
 	
  );
 					
